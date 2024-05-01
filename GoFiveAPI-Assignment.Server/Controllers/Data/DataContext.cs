@@ -10,6 +10,12 @@ namespace EmployeeAPI_Dotnet8.Data
         {
         }
 
+        
+
+
         public DbSet<Employee> Employee { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
+
     }
 }

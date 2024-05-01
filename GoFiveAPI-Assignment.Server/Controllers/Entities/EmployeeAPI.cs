@@ -1,21 +1,27 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace EmployeeAPI_Dotnet8.Entities
 {
     public class Employee
     {
         //user
-        public required int Id { get; set; }
-        public required string UserName { get; set; } = string.Empty;
-        public required string FirstName { get; set; } = string.Empty;
-        public required string LastName { get; set; } = string.Empty;
-        public required string Email { get; set; }
-        public required string Phone { get; set; } = string.Empty;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public  int Id { get; set; }
+        [Required]
+        public  string UserName { get; set; } = string.Empty;
+        [Required]
+        public  string FirstName { get; set; } = string.Empty;
+        [Required]
+        public  string LastName { get; set; } = string.Empty;
+        [Required]
+        public  string Email { get; set; }
+        [Required]
+        public  string Phone { get; set; } = string.Empty;
 
-        //role
-        public required string Role { get; set;} = string.Empty;
+        public Role Role { get; set; }
+        public Permission Permission { get; set; }
 
-        //permissions
-        public bool? IsRead { get; set; }
-        public bool? IsWrite { get; set;}
-        public bool? IsDeleted { get; set;}
     }
 }
