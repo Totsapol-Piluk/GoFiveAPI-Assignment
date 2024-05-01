@@ -1,0 +1,6 @@
+@GoFiveAPI_Assignment.Server_HostAddress = http://localhost:5110
+
+GET {{GoFiveAPI_Assignment.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
