@@ -57,7 +57,11 @@ namespace EmployeeAPI_Dotnet8.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            var dbEmployee = await _context.Employee.FindAsync(employee.Id);
+            if (dbEmployee != null)
+            {
+                return Conflict("There is already a user");
+            }
 
             _context.Employee.Add(employee);
             await _context.SaveChangesAsync();
