@@ -7,7 +7,7 @@ namespace EmployeeAPI_Dotnet8.Entities
     {
         //user
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public  int Id { get; set; }
         [Required]
         public  string UserName { get; set; } = string.Empty;

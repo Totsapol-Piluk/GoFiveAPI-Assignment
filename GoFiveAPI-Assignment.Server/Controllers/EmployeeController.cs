@@ -50,7 +50,7 @@ namespace EmployeeAPI_Dotnet8.Controllers
             });
         }
 
-        [HttpPost]
+        [HttpPost("add")]
         public async Task<ActionResult<Employee>> PostEmployee([FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
@@ -70,7 +70,7 @@ namespace EmployeeAPI_Dotnet8.Controllers
         }
 
 
-        [HttpDelete]
+        [HttpDelete("delete")]
         public async Task<ActionResult<Object>> DeleteEmployee(int id)
         {
             var employeeInfo = await _context.Employee.FindAsync(id);
@@ -95,7 +95,7 @@ namespace EmployeeAPI_Dotnet8.Controllers
             });
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("update/{id}")]
         public async Task<ActionResult<Object>> UpdateHero(int id,[FromBody] Employee updateEmployee)
         {
             var dbEmployee = await _context.Employee.FindAsync(id);
